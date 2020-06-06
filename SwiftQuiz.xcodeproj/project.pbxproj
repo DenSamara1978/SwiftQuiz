@@ -23,6 +23,14 @@
 		922581912488F4C2006A05AA /* SwiftQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922581902488F4C2006A05AA /* SwiftQuizTests.swift */; };
 		9225819C2488F4C2006A05AA /* SwiftQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9225819B2488F4C2006A05AA /* SwiftQuizUITests.swift */; };
 		922581AA2488F4F0006A05AA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 922581A92488F4F0006A05AA /* .gitignore */; };
+		924FFAA4248B9C720074ED50 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924FFAA3248B9C720074ED50 /* Observable.swift */; };
+		924FFAA6248B9CCA0074ED50 /* ObservableOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924FFAA5248B9CCA0074ED50 /* ObservableOptions.swift */; };
+		924FFAA8248BA7350074ED50 /* QuestionCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924FFAA7248BA7350074ED50 /* QuestionCaretaker.swift */; };
+		924FFAAC248BB7AE0074ED50 /* AppendQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924FFAAB248BB7AE0074ED50 /* AppendQuestionViewController.swift */; };
+		9259C129248ADB1A00AD5C9E /* QuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259C128248ADB1A00AD5C9E /* QuestionManager.swift */; };
+		9259C12B248ADB3500AD5C9E /* SerialQuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259C12A248ADB3500AD5C9E /* SerialQuestionManager.swift */; };
+		9259C12D248ADB5300AD5C9E /* RandomQuestionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259C12C248ADB5300AD5C9E /* RandomQuestionManager.swift */; };
+		9259C12F248AE60400AD5C9E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259C12E248AE60400AD5C9E /* SettingsViewController.swift */; };
 		92BA5A4824893089004D2987 /* RecordsCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA5A4724893089004D2987 /* RecordsCaretaker.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +74,14 @@
 		9225819B2488F4C2006A05AA /* SwiftQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftQuizUITests.swift; sourceTree = "<group>"; };
 		9225819D2488F4C2006A05AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		922581A92488F4F0006A05AA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		924FFAA3248B9C720074ED50 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		924FFAA5248B9CCA0074ED50 /* ObservableOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableOptions.swift; sourceTree = "<group>"; };
+		924FFAA7248BA7350074ED50 /* QuestionCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCaretaker.swift; sourceTree = "<group>"; };
+		924FFAAB248BB7AE0074ED50 /* AppendQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppendQuestionViewController.swift; sourceTree = "<group>"; };
+		9259C128248ADB1A00AD5C9E /* QuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionManager.swift; sourceTree = "<group>"; };
+		9259C12A248ADB3500AD5C9E /* SerialQuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialQuestionManager.swift; sourceTree = "<group>"; };
+		9259C12C248ADB5300AD5C9E /* RandomQuestionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomQuestionManager.swift; sourceTree = "<group>"; };
+		9259C12E248AE60400AD5C9E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		92BA5A4724893089004D2987 /* RecordsCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsCaretaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +118,10 @@
 				92092E9A2488F7B400815577 /* Question.swift */,
 				92092EA22488FB4D00815577 /* QuestionPool.swift */,
 				92BA5A4724893089004D2987 /* RecordsCaretaker.swift */,
+				9259C128248ADB1A00AD5C9E /* QuestionManager.swift */,
+				9259C12A248ADB3500AD5C9E /* SerialQuestionManager.swift */,
+				9259C12C248ADB5300AD5C9E /* RandomQuestionManager.swift */,
+				924FFAA7248BA7350074ED50 /* QuestionCaretaker.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -130,6 +150,7 @@
 		922581782488F4C1006A05AA /* SwiftQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				924FFAA2248B9C600074ED50 /* Observable */,
 				92092E952488F6BC00815577 /* Game */,
 				922581792488F4C1006A05AA /* AppDelegate.swift */,
 				9225817B2488F4C1006A05AA /* SceneDelegate.swift */,
@@ -141,6 +162,8 @@
 				92092E9C2488F95500815577 /* MainMenuViewController.swift */,
 				92092E9E2488F97400815577 /* GameViewController.swift */,
 				92092EA02488F98900815577 /* ResultsViewController.swift */,
+				9259C12E248AE60400AD5C9E /* SettingsViewController.swift */,
+				924FFAAB248BB7AE0074ED50 /* AppendQuestionViewController.swift */,
 			);
 			path = SwiftQuiz;
 			sourceTree = "<group>";
@@ -161,6 +184,15 @@
 				9225819D2488F4C2006A05AA /* Info.plist */,
 			);
 			path = SwiftQuizUITests;
+			sourceTree = "<group>";
+		};
+		924FFAA2248B9C600074ED50 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				924FFAA3248B9C720074ED50 /* Observable.swift */,
+				924FFAA5248B9CCA0074ED50 /* ObservableOptions.swift */,
+			);
+			path = Observable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,17 +327,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				924FFAA4248B9C720074ED50 /* Observable.swift in Sources */,
 				92092E992488F73400815577 /* GameSession.swift in Sources */,
+				924FFAA8248BA7350074ED50 /* QuestionCaretaker.swift in Sources */,
 				92092EA32488FB4D00815577 /* QuestionPool.swift in Sources */,
 				9225817E2488F4C1006A05AA /* ViewController.swift in Sources */,
 				9225817A2488F4C1006A05AA /* AppDelegate.swift in Sources */,
+				9259C12B248ADB3500AD5C9E /* SerialQuestionManager.swift in Sources */,
 				92092E9B2488F7B400815577 /* Question.swift in Sources */,
 				92092E9F2488F97400815577 /* GameViewController.swift in Sources */,
 				92092EA12488F98900815577 /* ResultsViewController.swift in Sources */,
+				9259C12F248AE60400AD5C9E /* SettingsViewController.swift in Sources */,
+				924FFAAC248BB7AE0074ED50 /* AppendQuestionViewController.swift in Sources */,
+				9259C12D248ADB5300AD5C9E /* RandomQuestionManager.swift in Sources */,
 				92092E9D2488F95500815577 /* MainMenuViewController.swift in Sources */,
 				9225817C2488F4C1006A05AA /* SceneDelegate.swift in Sources */,
 				92092E972488F6D600815577 /* Game.swift in Sources */,
+				924FFAA6248B9CCA0074ED50 /* ObservableOptions.swift in Sources */,
 				92BA5A4824893089004D2987 /* RecordsCaretaker.swift in Sources */,
+				9259C129248ADB1A00AD5C9E /* QuestionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
