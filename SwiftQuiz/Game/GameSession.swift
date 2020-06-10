@@ -8,6 +8,12 @@
 
 import Foundation
 
+
+enum QuestionMode {
+    case serial
+    case random
+}
+
 protocol GameSessionDelegate {
     func answer ( index: Int ) -> Bool
     func nextQuestion () -> Bool
@@ -16,30 +22,34 @@ protocol GameSessionDelegate {
 }
 
 class GameSession {
-    private let questionPool = QuestionPool ()
+    private var questionManager: QuestionManager?
     private var currentQuestionIndex = 0
+    private var question: Question?
+
+    private(set) var questionNumber: Observable<Int>
+    private(set) var currentResult: Observable<Float>
+    private var totalQuestionCount = 0
     
-    private var rightAnswered = 0
-    private var totalAsked = 0
-    
-    private var question: Question? {
-        if ( currentQuestionIndex >= questionPool.count ) {
-            return nil
+    public init ( mode: QuestionMode ) {
+        if ( mode == .random ) {
+            questionManager = RandomQuestionManager ()
         } else {
-            return questionPool.getQuestion(number: currentQuestionIndex)
+            questionManager = SerialQuestionManager ()
         }
+        questionNumber = Observable ( 0 )
+        currentResult = Observable ( 0.0 )
+        totalQuestionCount = questionManager?.getQuestionCount () ?? 1
     }
-    
-    func getResult () -> ( Int, Int ) {
-        return ( totalAsked, rightAnswered )
+
+    func getCurrentResult () -> Float {
+        return currentResult.value
     }
 }
 
 extension GameSession: GameSessionDelegate {
     func nextQuestion () -> Bool {
-        currentQuestionIndex += 1
-        guard let _ = question else { return false }
-        return true
+        question = questionManager?.nextQuestion()
+        return ( question != nil )
     }
     
     func getCurrentQuestionTitle () -> String? {
@@ -57,9 +67,9 @@ extension GameSession: GameSessionDelegate {
     
     func answer ( index: Int ) -> Bool {
         guard let question = question else { return false }
-        totalAsked += 1
         if ( question.rightAnswer == index ) {
-            rightAnswered += 1
+            questionNumber.value += 1
+            currentResult.value = (Float)(questionNumber.value) / (Float)(totalQuestionCount) * 100.0
             return true
         } else {
             return false
